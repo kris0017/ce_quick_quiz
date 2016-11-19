@@ -1,0 +1,163 @@
+<div class="quiz">
+  <div class="header">
+    <div class="row link-container">
+      <div class="col-sm-offset-3 col-sm-3 col-xs-12">
+        <p>Hi, {{ user.email }}</p>
+      </div>
+      <div class="col-sm-1 col-xs-12">
+        <a href="#/login" ng-click="logout()">Logout</a>
+      </div>
+    </div> 
+  </div> 
+  
+  <div class="row" ng-if="question.showAll">  
+    <div  class="col-sm-offset-3 col-sm-6 col-xs-12">
+      <h1>You scored {{userAnswers.score}}%</h1>
+      <h6 ng-if="userAnswers.score == 10">You got 10 points for registration ;)</h6>
+      <h6 ng-if="userAnswers.score == 100">How cool are you!</h6>
+    </div>
+  </div>
+
+  <div class="row">  
+    <!-- Question #1 --> 
+    <div class="col-sm-offset-2 col-sm-8 col-xs-12 question" ng-show="question.number == 1 || question.showAll">
+      <h3>1. Which is not an advantage of using a closure?</h3>
+      <div class="answers" ng-class="{'correct': question.showAll && result.first.isCorrect, 'incorrect': question.showAll && !result.first.isCorrect }">
+        <result ng-if="question.showAll" answer="{{result.first}}"></result>
+        <div ng-if="!question.showAll">
+          <input type="radio" name="first" value="a" ng-model="userAnswers.first">
+          <span id="first-a"> A. Prevent pollution of global scope</span>
+          <br>
+          <input type="radio" name="first" value="b" ng-model="userAnswers.first">
+          <span id="first-b"> B. Encapsulation</span>
+          <br>
+          <input type="radio" name="first" value="c" ng-model="userAnswers.first">
+          <span id="first-c"> C. Private properties and methods</span>
+          <br>
+          <input type="radio" name="first" value="d" ng-model="userAnswers.first"> D. Allow conditional use of ‘strict mode’</span>
+          <br>
+          <button class="btn btn-purple" ng-click="question.number = 2">Continue</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Question #2 --> 
+    <div class="col-sm-offset-2 col-sm-8 col-xs-12 question" ng-show="question.number == 2 || question.showAll">
+      <h3>2. To create a columned list of two-line email subjects and dates for a master-detail view, which are the most semantically correct?</h3>
+      <div class="answers" ng-class="{'correct': question.showAll && result.second.isCorrect, 'incorrect': question.showAll && !result.second.isCorrect }">
+        <result ng-if="question.showAll" answer="{{result.second}}"></result>
+        <div ng-if="!question.showAll">
+          <input type="radio" name="second" value="a" ng-model="userAnswers.second">
+          <span id="second-a"> A. &lt;div&gt;+&lt;span&gt;</span>
+          <br>
+          <input type="radio" name="second" value="b" ng-model="userAnswers.second">
+          <span id="second-b"> B. &lt;tr&gt;+&lt;td&gt;</span>
+          <br>
+          <input type="radio" name="second" value="c" ng-model="userAnswers.second">
+          <span id="second-c"> C. &lt;ul&gt;+&lt;li&gt;</span>
+          <br>
+          <input type="radio" name="second" value="d" ng-model="userAnswers.second">
+          <span id="second-d"> D. &lt;p&gt;+&lt;br&gt;</span>
+          <br>
+          <input type="radio" name="second" value="e" ng-model="userAnswers.second">
+          <span id="second-e"> E. none of these</span>
+          <br>
+          <input type="radio" name="second" value="f" ng-model="userAnswers.second">
+          <span id="second-f"> F. all of these</span>
+          <br>
+          <button class="btn btn-purple" ng-click="question.number = 3">Continue</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Question #3 --> 
+    <div class="col-sm-offset-2 col-sm-8 col-xs-12 question" ng-show="question.number == 3 || question.showAll">
+      <h3>3. To pass an array of strings to a function, you should not use…</h3>
+      <div class="answers" ng-class="{'correct': question.showAll && result.third.isCorrect, 'incorrect': question.showAll && !result.third.isCorrect }">
+        <result ng-if="question.showAll" answer="{{result.third}}"></result>
+        <div ng-if="!question.showAll">
+          <input type="radio" name="third" value="a" ng-model="userAnswers.third">
+          <span id="third-a"> A. fn.apply(this, stringsArray)</span>
+          <br>
+          <input type="radio" name="third" value="b" ng-model="userAnswers.third">
+          <span id="third-b"> B. fn.call(this, stringsArray)</span>
+          <br>
+          <input type="radio" name="third" value="c" ng-model="userAnswers.third">
+          <span id="third-c"> C. fn.bind(this, stringsArray)</span>
+          <br>
+          <button class="btn btn-purple" ng-click="question.number = 4">Continue</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Question #4 --> 
+    <div class="col-sm-offset-2 col-sm-8 col-xs-12 question" ng-show="question.number == 4 || question.showAll">
+      <h3>4. A.____ and B.____ would be the HTML tags you would use to display a menu item and its description.</h3>
+      <div class="answers" ng-class="{'correct': question.showAll && result.fourth.isCorrect, 'incorrect': question.showAll && !result.fourth.isCorrect }">
+        <result ng-if="question.showAll" answer="{{result.fourth}}"></result>
+         <div ng-if="!question.showAll">
+          A. <input class="form-control" type="text" value="" ng-model="userAnswers.fourth.a">
+          <br>
+          B. <input class="form-control" type="text" value="" ng-model="userAnswers.fourth.b">
+          <br>
+          <button class="btn btn-purple" ng-click="question.number = 5">Continue</button>
+        </div> 
+      </div>
+    </div>
+
+    <!-- Question #5 --> 
+    <div class="col-sm-offset-2 col-sm-8 col-xs-12 question" ng-show="question.number == 5 || question.showAll">
+      <h3>5. Given <br><b>&lt;div id=”outer”&gt;&lt;div class=”inner”&gt;&lt;/div&gt;&lt;/div&gt;</b><br>, which of these two is the most performant way to select the inner div?</h3>
+      <div class="answers" ng-class="{'correct': question.showAll && result.fifth.isCorrect, 'incorrect': question.showAll && !result.fifth.isCorrect }">
+        <result ng-if="question.showAll" answer="{{result.fifth}}"></result>
+        <div ng-if="!question.showAll">
+          <input type="radio" name="fifth" value="a" ng-model="userAnswers.fifth">
+          <span id="fifth-a"> A. getElementById("outer").children[0]</span>
+          <br>
+          <input type="radio" name="fifth" value="b" ng-model="userAnswers.fifth">
+          <span id="fifth-b"> B. getElementsByClassName("inner")[0]</span>
+          <br>
+          <button class="btn btn-purple" ng-click="question.number = 6">Continue</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Question #6 --> 
+    <div class="col-sm-offset-2 col-sm-8 col-xs-12 question" ng-show="question.number == 6 || question.showAll">
+      <h3>6. Given this:<br><br>
+              <p>&emsp;angular.module('myModule, []).service('myService', (function() {<br>
+                &emsp;&emsp;var message = 'Message one!';<br>
+                &emsp;&emsp;var getMessage = function() {<br>
+                &emsp;&emsp;return this.message;<br>
+                &emsp;};<br>
+                &emsp;this.message = 'Message two!';<br>
+                &emsp;this.getMessage = function() {<br>
+                &emsp;&emsp;return message;<br>
+                &emsp;};<br>
+                &emsp;return {<br>
+                &emsp;&emsp;getMessage: getMessage,<br>
+                &emsp;&emsp;message: 'Message three!';<br>
+                &emsp;};<br>
+                &emsp;}) ());<br></p>
+                Which message will be returned by injecting this service and executing "myService.getMessage()"?</h3>
+      <div class="answers" ng-class="{'correct': question.showAll && result.sixth.isCorrect, 'incorrect': question.showAll && !result.sixth.isCorrect }">
+        <result ng-if="question.showAll" answer="{{result.sixth}}"></result>
+        <div ng-if="!question.showAll">
+          <input type="radio" name="sixth" value="a" ng-model="userAnswers.sixth">
+          <span id="sixth-a"> A. 1</span>
+          <br>
+          <input type="radio" name="sixth" value="b" ng-model="userAnswers.sixth">
+          <span id="sixth-b"> B. 2</span>
+          <br>
+          <input type="radio" name="sixth" value="c" ng-model="userAnswers.sixth">
+          <span id="sixth-c"> C. 3</span>
+          <br>
+          <button class="btn btn-purple" ng-click="countResult()">Continue</button>
+        </div>
+      </div>
+    </div>
+
+   
+  </div>  
+</div>
+

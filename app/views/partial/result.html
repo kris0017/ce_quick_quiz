@@ -1,0 +1,10 @@
+<div ng-if="answer.isCorrect">
+  <h5><b>Correct!</b></h5>
+  {{answer.correctAnswer}}
+</div>
+<div ng-if="!answer.isCorrect">
+  <h5><b>You answered incorrectly</b></h5>
+  {{answer.userAnswer}}
+  <h5><b>Correct answer</b></h5>
+  {{answer.correctAnswer}}
+</div>

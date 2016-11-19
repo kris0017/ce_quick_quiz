@@ -1,0 +1,135 @@
+// bower:scss
+// endbower
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.ng-view-container { 
+  height:100%;
+}
+
+body {
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+button.btn-purple:hover, button.btn-purple:focus, input.btn-purple:hover, input.btn-purple:focus {
+  color: #ffffff;
+}
+
+.header {
+  .link-container {
+    margin: 20px -15px;
+    div:first-child {
+      text-align: right;
+    }
+  }
+}
+
+.middle-align {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.btn-purple {
+  background-color: #9932CC;
+  width: 80%;
+  margin: 15px auto;
+  display: block;
+  color: #ffffff;
+}
+
+input[type='radio'] {
+  -webkit-appearance:none;
+  width:20px;
+  height:20px;
+  border:1px solid darkgray;
+  border-radius:50%;
+  outline:none;
+  box-shadow:0 0 5px 0px gray inset;
+  vertical-align: top;
+  margin-bottom: 10px;
+}
+
+input[type='radio']:hover {
+  box-shadow:0 0 5px 0px orange inset;
+}
+
+input[type='radio']:before {
+  content:'';
+  display:block;
+  width:60%;
+  height:60%;
+  margin: 20% auto;    
+  border-radius:50%;    
+}
+
+input[type='radio']:checked:before {
+  background: #9932CC;
+}
+
+.login {
+  height: 100%;
+  width: 100%; 
+  form {
+    background-color: #efefef;
+    border-radius: 2px;
+    padding: 20px;
+    .form-control {
+      width: 80%;
+      margin: 5px auto;
+    }
+    .invalid {
+      border: 2px solid red;
+    }
+  }  
+}
+
+.quiz {
+  h1, h6 {
+    text-align: center;
+  }
+  h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    p {
+      font-size: 15px;
+      text-align: left;
+    }
+  }
+  .answers {
+    background-color: #efefef;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    padding: 30px;
+    color: #777777;
+    line-height: 2;
+    font-size: 15px;
+    &.correct {
+      background-color: #dff0d8;
+      border-color: #d6e9c6;
+    }
+    &.incorrect {
+      background-color: #f2dede;
+      border-color: #ebccd1;
+    }
+  }
+  .btn-purple {
+    width: 100%
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (max-width: 768px) {
+  .header .link-container div, .header .link-container div:first-child {
+    text-align: center;
+  }
+}
