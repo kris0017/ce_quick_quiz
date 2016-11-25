@@ -28,14 +28,20 @@ quizApp.controller('LoginCtrl', ['$log', '$location', '$scope', 'Cache', 'md5', 
    
     userFactory.get().then(
       function(userList) {
-        var user,
-            userPasword = md5.createHash($scope.user.password);
+        var user, enteredUser;
+
+        enteredUser = {
+          email: $scope.user.email,
+          password: md5.createHash($scope.user.password)
+        };
+
         for(var i = 0; i < userList.length; i++) {
-          if (angular.equals(userList[i], $scope.user)) {
+          if (angular.equals(userList[i], enteredUser)) {
             user = userList[i];
             break;
           }
         }
+
         if (user) {
           Cache.setUser(user);
           $location.path('/quiz');
