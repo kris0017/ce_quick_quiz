@@ -27,6 +27,8 @@ var paths = {
     'bower_components/angular-resource/angular-resource.js',
     'bower_components/angular-route/angular-route.js',
     'bower_components/angular-local-storage/dist/angular-local-storage.js',
+    'bower_components/angular-md5/angular-md5.js',
+    'app/**/*.js',
     'test/spec/**/*.js'
   ],
   karma: yeoman.test + '/karma.conf.js',

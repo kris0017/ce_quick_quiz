@@ -3,7 +3,7 @@
 /**
  * @ngdoc directive
  * @name ceQuickQuizApp.directive:result
- * @description
+ * @description To show correct and wrong answers.
  * # result
  */
 angular.module('ceQuickQuizApp')

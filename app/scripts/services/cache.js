@@ -3,7 +3,7 @@
 /**
  * @ngdoc service
  * @name ceQuickQuizApp.Cache
- * @description This service is for storing and saving data
+ * @description This service is for storing and getting data
  * # Cache
  * Service in the ceQuickQuizApp.
  */

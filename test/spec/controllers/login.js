@@ -1,23 +1,23 @@
 'use strict';
 
-describe('Controller: ResultsCtrl', function () {
+describe('Controller: LoginCtrl', function () {
 
   // load the controller's module
   beforeEach(module('ceQuickQuizApp'));
 
-  var ResultsCtrl,
-    scope;
+  var LoginCtrl,
+      scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    ResultsCtrl = $controller('ResultsCtrl', {
+    LoginCtrl = $controller('LoginCtrl', {
       $scope: scope
       // place here mocked dependencies
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(ResultsCtrl.awesomeThings.length).toBe(3);
-  });
+ /* it('should attach a list of awesomeThings to the scope', function () {
+    //expect(MainCtrl.awesomeThings.length).toBe(3);
+  });*/
 });
