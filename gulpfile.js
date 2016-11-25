@@ -28,6 +28,7 @@ var paths = {
     'bower_components/angular-route/angular-route.js',
     'bower_components/angular-local-storage/dist/angular-local-storage.js',
     'bower_components/angular-md5/angular-md5.js',
+    'bower_components/jquery/dist/jquery.js',
     'app/**/*.js',
     'test/spec/**/*.js'
   ],

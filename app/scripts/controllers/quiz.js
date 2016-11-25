@@ -7,7 +7,7 @@
  * # QuizCtrl
  * Controller of the ceQuickQuizApp
  */
-quizApp.controller('QuizCtrl', ['$log', '$location', '$scope', 'Cache', function ($log, $location, $scope, Cache) {
+quizApp.controller('QuizCtrl', ['$location', '$scope', 'Cache', function ($location, $scope, Cache) {
   $scope.user = Cache.getUser();
 
   if (!$scope.user) {
@@ -40,30 +40,30 @@ quizApp.controller('QuizCtrl', ['$log', '$location', '$scope', 'Cache', function
     Cache.setUser(undefined);
   }; 
 
-  function decodeHtml(html) {
+  $scope.decodeHtml = function(html) {
     var txt = document.createElement("textarea");
     txt.innerHTML = html;
     return txt.value;
   }  
 
-  function updateScore() {
+  $scope.updateScore = function() {
     $scope.userAnswers.score -= 15;
   }
 
-  function getResultObj(questionNumberStr) {
+  $scope.getResultObj = function(questionNumberStr) {
     var userAnswer = $scope.userAnswers[questionNumberStr] ? document.getElementById(questionNumberStr + '-' + $scope.userAnswers[questionNumberStr]).innerHTML : '';
     var isCorrect = angular.equals($scope.correctAnswers[questionNumberStr], $scope.userAnswers[questionNumberStr]);
     if (!isCorrect) {
-      updateScore();
+      $scope.updateScore();
     }
     return {
       isCorrect: isCorrect,
-      correctAnswer: decodeHtml(document.getElementById(questionNumberStr + '-' + $scope.correctAnswers[questionNumberStr]).innerHTML),
-      userAnswer: decodeHtml(userAnswer)
+      correctAnswer: $scope.decodeHtml(document.getElementById(questionNumberStr + '-' + $scope.correctAnswers[questionNumberStr]).innerHTML),
+      userAnswer: $scope.decodeHtml(userAnswer)
     };
   }
 
-  function isFourthCorrect() {
+  $scope.isFourthCorrect = function() {
     var isCorrect = false;
     if (angular.equals($scope.userAnswers.fourth.a, $scope.correctAnswers.fourth.a) || 
         angular.equals($scope.userAnswers.fourth.a, $scope.correctAnswers.fourth.b) || 
@@ -72,7 +72,7 @@ quizApp.controller('QuizCtrl', ['$log', '$location', '$scope', 'Cache', function
       isCorrect = true;
     }
     if (!isCorrect) {
-      updateScore();
+      $scope.updateScore();
     }
     return {
       isCorrect: isCorrect,
@@ -83,12 +83,12 @@ quizApp.controller('QuizCtrl', ['$log', '$location', '$scope', 'Cache', function
 
   $scope.countResult = function() {
     $scope.result = {
-      first: getResultObj('first'),
-      second: getResultObj('second'),
-      third: getResultObj('third'),
-      fourth: isFourthCorrect(),
-      fifth: getResultObj('fifth'),
-      sixth: getResultObj('sixth'),
+      first: $scope.getResultObj('first'),
+      second: $scope.getResultObj('second'),
+      third: $scope.getResultObj('third'),
+      fourth: $scope.isFourthCorrect(),
+      fifth: $scope.getResultObj('fifth'),
+      sixth: $scope.getResultObj('sixth'),
     };
     $scope.question.showAll = true;
   };
