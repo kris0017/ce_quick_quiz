@@ -13,11 +13,11 @@ angular.module('ceQuickQuizApp')
       restrict: 'E',
       transclude: true,
       link: function postLink(scope, element, attrs) {
-      scope.$watch(attrs.answer, function() { 
-        if (attrs.answer) {
-          scope.answer = JSON.parse(attrs.answer);
-        }        
-      });
+        scope.$watch(attrs.answer, function() { 
+          if (attrs.answer) {
+            scope.answer = JSON.parse(attrs.answer);
+          }        
+        });
       }
     };
   });

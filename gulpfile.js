@@ -30,6 +30,7 @@ var paths = {
     'bower_components/angular-md5/angular-md5.js',
     'bower_components/jquery/dist/jquery.js',
     'app/**/*.js',
+    'app/views/**/*.html',
     'test/spec/**/*.js'
   ],
   karma: yeoman.test + '/karma.conf.js',
